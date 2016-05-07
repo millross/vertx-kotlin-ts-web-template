@@ -1,0 +1,17 @@
+{
+  "name": "kotlin-vertx-template",
+  "description": "Simple template for kotlin/vertx web application",
+  "main": "",
+  "authors": [
+    "Jeremy Prime"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
