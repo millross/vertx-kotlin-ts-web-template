@@ -34,6 +34,17 @@ ext {
     vertx_version = '3.2.1'
 }
 
+// Create bower_components directory if not already there
+task createBowerDir << {
+    def bower_components = new File(projectDir, "bower_components")
+    if (!bower_components.exists()) {
+        println "Creating bower directory"
+        bower_components.mkdirs()
+    }
+}
+
+defaultTasks 'build'
+
 // makes sure on each build that gulp is installed
 gulp_build.dependsOn 'installGulp'
 
@@ -41,7 +52,7 @@ gulp_build.dependsOn 'installGulp'
 gulp_build.dependsOn 'npmInstall'
 
 // runs "gulp build" as part of your gradle build
-build.dependsOn gulp_build
+build.dependsOn 'gulp_build', 'createBowerDir'
 
 repositories {
     // Use 'jcenter' for resolving your dependencies.

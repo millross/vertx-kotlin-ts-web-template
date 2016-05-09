@@ -9,3 +9,11 @@ gradle-app.setting
 
 # Cache of project
 .gradletasknamecache
+
+# IntelliJ files
+.idea
+*.iml
+
+# Node files
+node_modules
+bower_components
